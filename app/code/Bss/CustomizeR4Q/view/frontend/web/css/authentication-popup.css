@@ -1,0 +1,5 @@
+@media (min-width: 992px) {
+    .modals-wrapper .modal-popup._inner-scroll .modal-inner-wrap {
+        min-width: 550px;
+    }
+}

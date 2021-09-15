@@ -1,0 +1,78 @@
+<div class="header-container">
+	<div class="topbar">
+		<div class="header panel">
+			<div class="topbar-inner flex-layout space-between center_vertical">
+				<div class="col-left col-top-link flex-layout">
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('topbar-menu')->toHtml(); ?>
+					<?php echo $this->getChildHtml("top.links"); ?>
+				</div>
+				<div class="col-right col-top-link flex-layout">
+					<div class="language-currency">
+						<div class="container-setting-language-currency">
+							<?php echo $this->getChildHtml("store_language"); ?>  
+							<?php echo $this->getChildHtml("currency"); ?>
+						</div>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header-middle">
+		<div class="container">
+			<div class="flex-layout space-between center_vertical">
+				<div class="logo-container">
+					<div class="logo-site">
+						<?php echo $this->getChildHtml('logo'); ?>
+					</div>
+				</div>
+				<div class="top-search-not-dropdown">
+					<?php echo $this->getChildHtml("mageworx-search-autocomplete-wrapper"); ?>
+				</div>
+				<div class="col-action col-right">
+					<ul class="flex-layout action-header">
+						<?php echo $block->getLayout()->createBlock('Magento\Wishlist\Block\Link')->setTemplate('Magento_Wishlist::link.phtml')->toHtml();?>
+						<li class="minicart-li-content-show-hide">
+							<?php echo $this->getChildHtml('minicart'); ?>
+							<?= /** @noEscape */ $this->getChildHtml('miniquoteextension'); ?>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header-content sticky-header center-element">
+		<div class="container">
+			<div class="flex-layout for-full-width-menu space-between center_vertical">
+				<span data-action="toggle-nav" class="action nav-toggle"><span><?php echo __('Toggle Nav') ?></span></span>
+				<?php if($this->helper('Rokanthemes\Themeoption\Helper\Themeconfig')->isEnableStickyHeader()){ ?>
+					<div class="logo-sticky">
+						<a href="<?php echo $block->getUrl('');?>" class="sticky-logo"
+						title="<?php echo __('Logo');?>">
+							<img src="<?php echo ($this->helper('Rokanthemes\Themeoption\Helper\Themeconfig')->getStickyLogoHeader() != '') ? $this->helper('Rokanthemes\Themeoption\Helper\Themeconfig')->getStickyLogoHeader() : $this->getViewFileUrl("images/logo_sticky.png");?>" alt="<?php echo __('Logo');?>"/>
+						</a>
+					</div>
+				<?php } ?>
+				<div class="col-menu-on-left flex-layout col-menu">
+					<div class="rokan-vertical-menu">
+						<?php echo $this->getChildHtml("rokanthemes.vertical.menu"); ?>
+					</div>
+					<div class="primary-menu-container col-left">
+						<?php echo $this->getChildHtml("rokanthemes.horizontal.menu"); ?>	
+					</div>
+				</div>
+				<div class="col-action col-right">
+					<div class="hotline"><?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('hotline')->toHtml(); ?></div>
+				</div>
+				<div class="col-action col-right show-on-sticky action-sticky">
+					<ul class="flex-layout action-header">
+						<?php echo $block->getLayout()->createBlock('Magento\Wishlist\Block\Link')->setTemplate('Magento_Wishlist::link.phtml')->toHtml();?>
+						<li class="minicart-li-content-show-hide">
+							<?php echo $this->getChildHtml('minicart'); ?>
+							<?= /** @noEscape */ $this->getChildHtml('miniquoteextension'); ?>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

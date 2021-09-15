@@ -1,0 +1,65 @@
+<div class="header-container layout-1 sticky-header">
+	<div class="topbar hidden-xs hidden-sticky">
+		<div class="container">
+			<div class="topbar-inner">
+				<div class="flex-layout space-between center_vertical center-mobile">
+					<div class="col-left col-top-link flex-layout center_vertical hidden-sm no-wrap-desktop">
+						<div class="language-currency">
+							<div class="container-setting-language-currency">
+								<?php echo $this->getChildHtml("store_language"); ?>  
+								<?php echo $this->getChildHtml("currency"); ?> 
+							</div>		
+						</div>
+						<div class="hotline"><?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('default_hotline')->toHtml(); ?></div>
+					</div>
+					<div class="col-right col-top-link flex-layout center_vertical">
+						<div class="topbar-menu hozital-menu">
+							<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('default_topbar_menu')->toHtml(); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header panel flex-layout-sticky center_vertical no-wrap-desktop">
+		<div class="flex-layout space-between center_vertical no-wrap-desktop header-middle">
+			<div class="logo-container hidden-sticky-desktop">
+				<div class="logo-site">
+					<?php echo $this->getChildHtml('logo'); ?>
+				</div>
+			</div>
+			<div class="top-search-not-dropdown">
+				<?php echo $this->getChildHtml("mageworx-search-autocomplete-wrapper"); ?>
+			</div>
+			<div class="col-action col-right">
+				<div class="flex-layout center_vertical">
+					<ul class="flex-layout action-header center_vertical no-wrap-desktop">
+						<li class="account-link-header hidden-xs">
+							<?php echo $this->getChildHtml("top.links"); ?>
+						</li>
+						<?php echo $block->getLayout()->createBlock('Magento\Wishlist\Block\Link')->setTemplate('Magento_Wishlist::link.phtml')->toHtml();?>
+						<li class="minicart-li-content-show-hide">
+							<?php echo $this->getChildHtml('minicart'); ?>
+                            <?= /** @noEscape */ $this->getChildHtml('miniquoteextension'); ?>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="header-content center-element not-visible-mobile hidden-checkout">
+			<div class="flex-layout for-full-width-menu space-between center_vertical no-wrap-desktop">
+				<div class="col-menu-on-left flex-layout col-menu center_vertical no-wrap-desktop vertical-hozital-menu">
+					<div class="rokan-vertical-menu d-none d-xl-block">
+						<?php echo $this->getChildHtml("rokanthemes.vertical.menu"); ?>
+					</div>
+					<div class="hidden-sticky">
+						<?php echo $this->getChildHtml("rokanthemes.horizontal.menu"); ?>	
+					</div>
+				</div>
+				<div class="header-static-text d-none d-xl-block hidden-sticky">
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('default_header_static_text')->toHtml(); ?> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

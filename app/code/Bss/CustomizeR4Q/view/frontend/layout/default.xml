@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="quoteextension_quote_sidebar_item_renderers"/>
+    <update handle="quoteextension_quote_sidebar_item_price_renderers"/>
+    <update handle="quoteextension_quote_sidebar_total_renderers"/>
+    <body>
+        <referenceBlock name="bluesky.header" class="Bss\CustomizeR4Q\Block\Html\Header" />
+        <move element="miniquoteextension" destination="bluesky.header"/>
+    </body>
+</page>
