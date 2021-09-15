@@ -41,6 +41,11 @@ class Columns extends \Magento\Catalog\Ui\Component\Listing\Columns
     protected $request;
 
     /**
+     * @var \Magento\Catalog\Ui\Component\ColumnFactory
+     */
+    protected $columnFactory;
+
+    /**
      * Columns constructor.
      * @param \Magento\Framework\View\Element\UiComponent\ContextInterface $context
      * @param \Magento\Catalog\Ui\Component\ColumnFactory $columnFactory
@@ -62,6 +67,7 @@ class Columns extends \Magento\Catalog\Ui\Component\Listing\Columns
         array $data = []
     ) {
         parent::__construct($context, $columnFactory, $attributeRepository, $components, $data);
+        $this->columnFactory = $columnFactory;
         $this->request = $request;
         $this->componentFactory = $componentFactory;
         $this->helper = $helper;
