@@ -155,7 +155,7 @@ class Fbt extends \Magento\Catalog\Block\Product\AbstractProduct implements \Mag
             if ($value == 4) {
                 # Auto
                 $startdate = $this->helper->getStartDate();
-                $dateStart = date(' 00:00:00' . 'Y-m-d', strtotime(str_replace('/', '-', $startdate)));
+                $dateStart = date('Y-m-d' . ' 00:00:00', strtotime(str_replace('/', '-', $startdate)));
                 $dateEnd = date('Y-m-d' . ' 23:59:59', strtotime($this->timezone->gmtDate()));
 
                 $order_ids = $this->helperModel->modelOrderItem()->getOrderIds($dateStart, $dateEnd, $productId);
