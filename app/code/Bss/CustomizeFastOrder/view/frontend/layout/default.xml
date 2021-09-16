@@ -3,7 +3,7 @@
     <body>
         <referenceBlock name="fastorder-link-blank">
             <action method="setTemplate">
-                <argument name="template" xsi:type="string">Bss_FastOrder::toggle-mini-fast-order.phtml</argument>
+                <argument name="template" xsi:type="string">Bss_CustomizeFastOrder::toggle-mini-fast-order.phtml</argument>
             </action>
         </referenceBlock>
         <move element="fastorder-link-shopping-cart" destination="bluesky.header"/>
