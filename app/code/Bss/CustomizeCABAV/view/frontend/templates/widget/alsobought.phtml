@@ -1,0 +1,67 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_CABAV
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2018-2019 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+// @codingStandardsIgnoreFile
+use \Bss\CustomizeCABAV\Block\Widget\AlsoViewed;
+?>
+<?php
+/**
+ * @var Bss\CustomizeCABAV\Block\Widget\AlsoBought $block
+ */
+?>
+
+<?php if ($block->isEnable() && $block->isEnable() == 1) : ?>
+    <?php
+    $displayMode = $block->getData('display') == AlsoViewed::MODE_SLIDER ? "slider" : "grid";
+    $displayItem = 5;
+    if ($block->getData('number_product')) {
+        $displayItem = (int) $block->getData('number_product');
+    }
+    ?>
+    <style>
+        @media (min-width: 240px) {
+            .page-layout-1column .grid.block.widget .alsobought-list .products-grid .product-item
+            {
+                width: 100% !important;
+            }
+        }
+        @media (min-width: 600px) {
+            .page-layout-1column .grid.block.widget .alsobought-list .products-grid .product-item
+            {
+                width: calc(100% / 3) !important;
+            }
+        }
+        @media (min-width: 1024px) {
+            .page-layout-1column .grid.block.widget .alsobought-list .products-grid .product-item
+            {
+                width: calc(100% / <?= /** @noEscape */ $displayItem ?>) !important;
+            }
+        }
+    </style>
+    <div class="widget block block-static-block <?= /** @noEscape */ $displayMode ?>">
+        <div class="alsobought-list"
+             data-mage-init='{
+            "Bss_CABAV/js/alsoboughtview": {
+                "url": "<?php echo $block->getUrl('viewed/alsobought/product', ['_secure' => true]) ?>",
+                "data": <?php echo $block->getDataJson() ?>,
+                "type": "alsobought",
+                "urlsave": "",
+                "currentproduct": ""
+            }
+        }'></div>
+    </div>
+<?php endif; ?>
