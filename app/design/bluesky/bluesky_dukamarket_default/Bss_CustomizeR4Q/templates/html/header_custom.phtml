@@ -40,6 +40,7 @@
 						<?php echo $block->getLayout()->createBlock('Magento\Wishlist\Block\Link')->setTemplate('Magento_Wishlist::link.phtml')->toHtml();?>
 						<li class="minicart-li-content-show-hide">
 							<?php echo $this->getChildHtml('minicart'); ?>
+                            <?= /** @noEscape */ $this->getChildHtml('fastorder-link-shopping-cart'); ?>
                             <?= /** @noEscape */ $this->getChildHtml('miniquoteextension'); ?>
 						</li>
 					</ul>

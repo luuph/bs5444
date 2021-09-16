@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="fastorder-link-blank">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Bss_FastOrder::toggle-mini-fast-order.phtml</argument>
+            </action>
+        </referenceBlock>
+        <move element="fastorder-link-shopping-cart" destination="bluesky.header"/>
+        <move element="fastorder-link-footer" destination="bluesky.footer"/>
+    </body>
+</page>
