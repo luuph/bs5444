@@ -71,7 +71,7 @@ define([
                     let value = attributeKey;
                     let theIdFrame = ".field-" + idFrame;
                     let frameInput = $(theIdFrame);
-                    frameInput = frameInput.find("iframe").contents().find('#tinymce');
+                    frameInput = frameInput.find("iframe").contents().find('#html-body.mce-content-body');
                     let textIput = frameInput.html();
                     frameInput.html(textIput+'<p>'+value+'</p>');
                     $(".textarea-active").insertAtCaret(value).focus();
