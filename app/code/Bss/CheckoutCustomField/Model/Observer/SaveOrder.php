@@ -168,7 +168,7 @@ class SaveOrder implements ObserverInterface
                 if ($attr['type'] == 'multiselect') {
                     $data[$this->addSlashed($key)]= $this->addSlashed(implode(",", $attr['value']));
                 } elseif (in_array($attr['type'], $attrType)) {
-                    $data[$this->addSlashed($key)] = $this->addSlashed($attr['value']);
+                    $data[$this->addSlashed($key)] = $this->addSlashed(json_encode($attr['value']));
                 } else {
                     $data[$this->addSlashed($key)] = $this->addSlashed($attr['value']);
                 }
