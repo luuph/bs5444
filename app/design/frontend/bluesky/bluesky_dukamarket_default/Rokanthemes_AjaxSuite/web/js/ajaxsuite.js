@@ -74,56 +74,56 @@ define([
             }
             return false;
         },
-        initEventsWishlist: function()
-        {
-            var self = this;
-            var get_customer_data = this.getCustomerData();
-
-            if(!get_customer_data){
-                //$(self.options.ajaxWishList.wishlistBtnSelector).addClass("trigger-auth-popup").attr('data-action', 'ajax-popup-login').removeAttr("data-post");
-            }
-            $('body').on('click',self.options.ajaxWishList.wishlistBtnSelector, function (e) {
-                if (!get_customer_data) {
-                    $(self.options.ajaxWishList.wishlistBtnSelector).addClass("trigger-auth-popup").attr('data-action', 'ajax-popup-login').attr('href', 'javascript:void(0);').removeAttr("data-post");
-                    e.preventDefault();
-                    return;
-                }
-				var _this_fixed = $(this);
-                _this_fixed.addClass('loading');
-                e.preventDefault();
-                e.stopPropagation();
-                if($(this).data('post'))
-                {
-                    var params = $(this).data('post').data;
-                }else
-                {
-                    var params = {};
-                }
-                params['ajax_post'] = true;
-                $('body').trigger('processStart');
-                $.ajax({
-                    url: self.options.ajaxWishList.WishlistUrl,
-                    data: params,
-                    type: 'post',
-                    showLoader: false,
-                    dataType: 'json',
-                    success: function (res) {
-                        ajaxsuitepopup.hideModal();
-                        if (res.html_popup) {
-                            self.options.popupWrapper.html(res.html_popup);
-                            self.showModal(self.options.popupWrapper);
-                        }
-                        self.reloadCustomerData(['wishlist']);
-						_this_fixed.removeClass('loading');
-                    },
-                    error: function (res) {
-                        alert('Error in sending ajax request');
-						_this_fixed.removeClass('loading');
-                    }
-                });
-                $('body').trigger('processStop');
-            });
-        },
+        // initEventsWishlist: function()
+        // {
+        //     var self = this;
+        //     var get_customer_data = this.getCustomerData();
+        //
+        //     if(!get_customer_data){
+        //         //$(self.options.ajaxWishList.wishlistBtnSelector).addClass("trigger-auth-popup").attr('data-action', 'ajax-popup-login').removeAttr("data-post");
+        //     }
+        //     $('body').on('click',self.options.ajaxWishList.wishlistBtnSelector, function (e) {
+        //         if (!get_customer_data) {
+        //             $(self.options.ajaxWishList.wishlistBtnSelector).addClass("trigger-auth-popup").attr('data-action', 'ajax-popup-login').attr('href', 'javascript:void(0);').removeAttr("data-post");
+        //             e.preventDefault();
+        //             return;
+        //         }
+		// 		var _this_fixed = $(this);
+        //         _this_fixed.addClass('loading');
+        //         e.preventDefault();
+        //         e.stopPropagation();
+        //         if($(this).data('post'))
+        //         {
+        //             var params = $(this).data('post').data;
+        //         }else
+        //         {
+        //             var params = {};
+        //         }
+        //         params['ajax_post'] = true;
+        //         $('body').trigger('processStart');
+        //         $.ajax({
+        //             url: self.options.ajaxWishList.WishlistUrl,
+        //             data: params,
+        //             type: 'post',
+        //             showLoader: false,
+        //             dataType: 'json',
+        //             success: function (res) {
+        //                 ajaxsuitepopup.hideModal();
+        //                 if (res.html_popup) {
+        //                     self.options.popupWrapper.html(res.html_popup);
+        //                     self.showModal(self.options.popupWrapper);
+        //                 }
+        //                 self.reloadCustomerData(['wishlist']);
+		// 				_this_fixed.removeClass('loading');
+        //             },
+        //             error: function (res) {
+        //                 alert('Error in sending ajax request');
+		// 				_this_fixed.removeClass('loading');
+        //             }
+        //         });
+        //         $('body').trigger('processStop');
+        //     });
+        // },
         initEventsCompare: function () {
             var self = this;
             $('body').on('click',self.options.ajaxCompare.compareSelector, function (e) {
@@ -275,10 +275,10 @@ define([
             {
                this.initEventsAjaxCart();
             }
-            if(this.options.ajaxWishList.enabled)
-            {
-                this.initEventsWishlist();
-            }
+            // if(this.options.ajaxWishList.enabled)
+            // {
+            //     this.initEventsWishlist();
+            // }
             if(this.options.ajaxCompare.enabled)
             {
                 this.initEventsCompare();
