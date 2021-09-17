@@ -1,0 +1,251 @@
+ & when (@media-common = true) {
+ .fancybox-wrap {
+   #bss_fbt_cart_popup {
+     top: 0;
+     max-width: 90%;
+     width: auto;
+     margin: 30px auto;
+     .popup {
+       .product-info-er .item-info-er .info-er-pu .product-qty-er {
+         height: 50px;
+         span {
+           height: 100%;
+           line-height: 40px;
+           text-align: center;
+           display: inline-block;
+         }
+         .quantity {
+           width: 50px !important;
+           height: 100%;
+           line-height: 1;
+         }
+       }
+     }
+     #product-slider {
+       .owl-item {
+         .product-info {
+           a {
+             display: block;
+             text-overflow: ellipsis;
+             overflow: hidden;
+             white-space: nowrap;
+           }
+         }
+       }
+     }
+   }
+   .fancybox-outer {
+     position: unset;
+     .fancybox-inner {
+       position: unset;
+       max-height: inherit;
+     }
+   }
+ }
+ .products .owl-theme .owl-nav [class*='owl-'] {
+   margin-left: 0;
+ }
+ .fbt-product-list {
+   .block.fbt {
+     margin-bottom: 0;
+
+     .block-content .products-fbt {
+       .list.product-items {
+         display: block;
+         border-left: 1px solid #e2e6ef;
+         border-right: 1px solid #e2e6ef;
+         margin-left: 0;
+         overflow: hidden;
+         width: 100%;
+         .owl-controls {
+           position: unset;
+           .owl-buttons {
+             .owl-prev, .owl-next {
+               top: 50%;
+               bottom: auto;
+               line-height: 1;
+               height: auto;
+               width: auto;
+               text-align: center;
+               text-indent: unset;
+               border: none;
+               font-size: 1.5rem;
+               padding: 14.5px 7.5px;
+               background: #16bcdc;
+               color: #16bcdc;
+               transition: all .25s ease-in-out;
+               &:before {
+                 position: absolute;
+                 top: 50%;
+                 left: 0;
+                 width: 100%;
+                 height: 100%;
+                 color: white;
+                 transform: translateY(-20%);
+                 font-size: 1.75rem;
+               }
+             }
+             .owl-prev {
+               left: 0;
+               right: auto;
+               border-bottom-right-radius: 100%;
+               border-top-right-radius: 100%;
+               &:hover {
+                 left: -7px;
+               }
+               &:before {
+                 content: '<';
+               }
+             }
+             .owl-next {
+               right: 0;
+               left: auto;
+               border-bottom-left-radius: 100%;
+               border-top-left-radius: 100%;
+               &:hover {
+                 right: -7px;
+               }
+               &:before {
+                 content: '>';
+               }
+             }
+           }
+         }
+         .owl-nav {
+           margin: 0;
+           position: unset;
+           .owl-prev, .owl-next {
+             top: 50%;
+             transform: translateY(-50%);
+             bottom: inherit;
+             background: #16bcdc;
+             color: #fff;
+             width: auto;
+             font-size: 1.5rem;
+             height: auto;
+             padding: 15px;
+             line-height: 1;
+             transition: all .25s;
+           }
+           .owl-prev {
+             left: 0;
+             right: inherit;
+             border-bottom-right-radius: 100%;
+             border-top-right-radius: 100%;
+             &:hover {
+               left: -7px;
+             }
+           }
+           .owl-next {
+             right: 0;
+             left: inherit;
+             border-bottom-left-radius: 100%;
+             border-top-left-radius: 100%;
+             &:hover {
+               right: -7px;
+             }
+           }
+         }
+         .owl-wrapper-outer, .owl-stage-outer {
+           .owl-stage {
+             padding: 0;
+           }
+           .owl-item {
+             padding: 10px 5px;
+
+             .product-item-info {
+               border: 1px solid #fafafa;
+             }
+
+             .product-item-details .product-item-actions .actions-primary {
+               position: unset;
+               width: 100%;
+               padding: 0;
+             }
+
+             .product-item {
+               &:before {
+                 bottom: 5.1rem;
+               }
+               &:hover {
+                 &:before {
+                   bottom: 0;
+                 }
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+ }
+
+ #fbt-products table.fbt-preview1 {
+   max-width: 800px;
+   tbody {
+     tr td {
+       &:nth-child(4) {
+         min-width: 200px;
+       }
+       .quote-category{
+         width: 100%;
+         .action.toquote {
+           padding: 10px 50px;
+         }
+       }
+     }
+   }
+ }
+ }
+
+@media screen and (max-width: 539px) {
+  .fbt-product-list .block.fbt .block-content .products-fbt .list.product-items {
+      border-left: none;
+      border-right: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .fbt-product-list {
+    .block.fbt {
+      .list.product-items {
+        .owl-item {
+          .product-item-details .product-item-actions .actions-primary {
+            display: flex;
+            flex-direction: column;
+
+            .quote-category {
+              display: inline-flex !important;
+              width: 3.5rem;
+              height: 3.5rem;
+              border-radius: 100%;
+              background-color: #f5f5f5;
+              justify-content: center;
+              align-items: center;
+              margin-top: 0;
+
+              .action.toquote {
+                display: none;
+              }
+
+              &:hover {
+                background-color: #13a8c5;
+                &:before {
+                  color: #fff;
+                }
+              }
+
+              &:before {
+                content: '\ea41';
+                font-family: icon-dukamarket, sans-serif;
+                font-size: 13px;
+                color: #263c97;
+                line-height: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

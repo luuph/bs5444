@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <remove src="Bss_FBT::css/owl.theme.css" />
+        <remove src="Bss_FBT::css/owl.carousel.css"/>
+        <remove src="Bss_FBT::js/configurable_list.js"/>
+        <css src="Bss_CustomizeFBT::css/owl.carousel.css" />
+        <css src="Bss_CustomizeFBT::css/owl.theme.default.css" />
+        <script src="Bss_CustomizeFBT::js/configurable_list.js" />
+    </head>
+</page>
