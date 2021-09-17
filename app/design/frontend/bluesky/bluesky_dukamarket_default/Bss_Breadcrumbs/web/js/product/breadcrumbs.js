@@ -17,7 +17,6 @@
 define([
     'jquery',
     'Magento_Theme/js/model/breadcrumb-list',
-    'underscore',
     'mage/template',
     'text!Magento_Theme/templates/breadcrumbs.html',
     'jquery-ui-modules/widget'
