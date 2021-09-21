@@ -17,11 +17,11 @@
  */
 -->
 <!-- ko if: elems().length -->
-<li id="custom-field">
-    <div id="custom-field-form" class="fieldset address" style="margin-top: 20px; padding: 30px;">
-        <!-- ko foreach: { data: elems, as: 'element' } -->
-        <!-- ko template: element.getTemplate() --><!-- /ko -->
-        <!-- /ko -->
-    </div>
-</li>
+    <li id="custom-field">
+        <div id="custom-field-form" class="fieldset address">
+            <!-- ko foreach: { data: elems, as: 'element' } -->
+                <!-- ko template: element.getTemplate() --><!-- /ko -->
+            <!-- /ko -->
+        </div>
+    </li>
 <!-- /ko -->
