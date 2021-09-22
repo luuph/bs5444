@@ -1,0 +1,208 @@
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_CABAV
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+& when (@media-common = true) {
+  .full-page-grid
+  {
+    width:100% !important;
+  }
+  .alsobought-grid-1
+  {
+    width:100% !important;
+  }
+  .alsobought-grid-2
+  {
+    width:50% !important;
+  }
+  .alsobought-grid-3
+  {
+    width:33.333% !important;
+  }
+  .alsobought-grid-4
+  {
+    width:25% !important;
+  }
+  .alsobought-grid-5
+  {
+    width:20% !important;
+  }
+  .alsobought-grid-6
+  {
+    width:16.666% !important;
+  }
+  .alsobought-grid-7
+  {
+    width:14.285% !important;
+  }
+  .alsobought-grid-8
+  {
+    width:12.5% !important;
+  }
+  .alsobought-grid-9
+  {
+    width:11.111% !important;
+  }
+  .alsobought-grid-10
+  {
+    width:10% !important;
+  }
+  .alsobought-grid-11
+  {
+    width:9.909% !important;
+  }
+  .alsobought-grid-12
+  {
+    width:8.333% !important;
+  }
+  .alsobought-grid-13
+  {
+    width:7.692% !important;
+  }
+  .alsobought-grid-14
+  {
+    width:7.142% !important;
+  }
+  .alsobought-grid-15
+  {
+    width:6.666% !important;
+  }
+  .alsobought-grid-16
+  {
+    width:6.25% !important;
+  }
+  .alsobought-grid-17
+  {
+    width:5.882% !important;
+  }
+  .alsobought-grid-18
+  {
+    width:5.555% !important;
+  }
+  .alsobought-grid-19
+  {
+    width:5.263% !important;
+  }
+  .alsobought-grid-20
+  {
+    width:5% !important;
+  }
+  .alsobought-list,
+  .alsoview-list {
+    .products-grid {
+      .product-item-info {
+        text-align: center;
+        &:hover,
+        .active {
+          padding:9px!important;
+        }
+
+      }
+    }
+    .owl-carousel {
+      margin-left:0!important;
+    }
+  }
+  .footer {
+    &.content {
+      .links {
+        padding-right:0;
+        max-width:100%;
+        &.also {
+          display:block;
+          padding-right:0;
+        }
+      }
+    }
+  }
+  .compare {
+    &.wrapper {
+      float:none!important;
+    }
+  }
+  .owl-theme {
+    &.owl-carousel {
+      .owl-stage {
+        padding-left: 0;
+      }
+    }
+  }
+  
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  .page-wrapper {
+    .section {
+      &.block-newsletter-form {
+        padding-top: 30px;
+      }
+    }
+  }
+}
+
+//
+//  Desktop (style-l.css)
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .footer {
+    .widget {
+      float:none!important;
+      .alsoview,
+      .alsobought {
+        float:none!important;
+        max-width:100%;
+        width:100%;
+      }
+    }
+  }
+  .alsobought-list, .alsoview-list {
+    .owl-carousel {
+      &.owl-loaded {
+        margin-left: 0!important;
+        .owl-item {
+          &:nth-child(1) {
+            margin-right:0!important;
+          }
+          padding-bottom:40px!important;
+        }
+      }
+    }
+
+    .product-item-inner {
+      margin: 9px 0 0 -1px;
+    }
+
+    .product-reviews-summary {
+      .reviews-actions {
+        .action {
+          &.add {
+            white-space: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .owl-carousel-view {
+    .owl-item {
+      text-align: center;
+    }
+  }
+}
