@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at thisURL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_ProductQuestions
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details.after.wrapper.main">
+            <block class="Magento\Framework\View\Element\Template"  name="product.question.wrapper" after="product.attributes.wrapper" template="Magento_PageBuilder::catalog/product/view/section_wrapper.phtml">
+                <arguments>
+                    <argument name="title" xsi:type="helper"  helper="Bss\ProductQuestions\Helper\Adminhtml\Config::getConfigTitleBlock"  />
+                    <argument name="section_id" xsi:type="string">product-question</argument>
+                </arguments>
+                <block class="Bss\ProductQuestions\Block\Tab" ifconfig="questions/general/enable" name="bss_comment_tab_new" group="detailed_info">
+                    <block class="Bss\ProductQuestions\Block\Tab\Questions" name="bss_comment_tab.list.questions"/>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
