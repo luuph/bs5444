@@ -214,34 +214,29 @@
           .product-item-details .product-item-actions .actions-primary {
             display: flex;
             flex-direction: column;
-
-            .quote-category {
-              display: inline-flex !important;
-              width: 3.5rem;
-              height: 3.5rem;
-              border-radius: 100%;
-              background-color: #f5f5f5;
-              justify-content: center;
-              align-items: center;
-              margin-top: 0;
-
-              .action.toquote {
-                display: none;
-              }
-
-              &:hover {
-                background-color: #13a8c5;
+          }
+          
+          .product-item {
+            .product-item-actions {
+              position: relative;
+            }
+            .actions-primary {
+              .tocart {
+                width: 100%;
+                padding: 11px 5%;
+                height: 40px;
                 &:before {
-                  color: #fff;
+                  display: none;
                 }
-              }
-
-              &:before {
-                content: '\ea41';
-                font-family: icon-dukamarket, sans-serif;
-                font-size: 13px;
-                color: #263c97;
-                line-height: 1;
+                span {
+                  position: relative;
+                  overflow: initial;
+                  clip: initial;
+                  width: auto;
+                  height: auto;
+                  font-weight: 500;
+                  line-height: 16px;
+                }
               }
             }
           }
